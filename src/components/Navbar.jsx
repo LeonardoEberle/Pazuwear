@@ -1,27 +1,32 @@
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/PazuLogo.png'
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <ul>
-        <li>
+      <div className="navbar-inner">
+        <div className="navbar-logo">
           <NavLink to="/" end>
-            Home
+            <img src={logo} alt="Pazu Wearbeach" />
           </NavLink>
-        </li>
-        <li>
-          <NavLink to="/catalogo">Catálogo</NavLink>
-        </li>
-        <li>
-          <NavLink to="/sobre">Sobre</NavLink>
-        </li>
-        <li>
-          <NavLink to="/contato">Contato</NavLink>
-        </li>
-        <li>
-          <NavLink to="/produto">Produto</NavLink>
-        </li>
-      </ul>
+        </div>
+        <ul className="navbar-links">
+          <li>
+            <NavLink to="/" end>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/catalogo">Catálogo</NavLink>
+          </li>
+          <li>
+            <NavLink to="/sobre">Sobre</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contato">Contato</NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

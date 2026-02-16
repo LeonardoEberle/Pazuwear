@@ -31,9 +31,21 @@ nav {
   border-bottom: 1px solid #e5e5e5;
 }
 
-nav ul {
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 2rem;
+}
+
+.navbar-logo img {
+  height: 96px;
+  width: auto;
+  display: block;
+}
+
+.navbar-links {
   margin: 0;
-  padding: 0.75rem 2rem;
   list-style: none;
   display: flex;
   gap: 1.5rem;
@@ -121,8 +133,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-  nav ul {
+  .navbar-inner {
     padding-inline: 1.5rem;
+  }
+
+  .navbar-links {
     gap: 1rem;
     overflow-x: auto;
   }

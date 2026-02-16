@@ -137,18 +137,16 @@ function Home() {
 
       <section className="home-section info-grid">
         <article className="info-card">
-          <h2>Conhecimento e estilo</h2>
+          <h2>Algo aqui</h2>
           <p>
-            Conteúdos sobre cuidados com as peças, tendências de moda praia e
-            como montar combinações versáteis para o dia a dia.
+            link para blog ou algo assim?
           </p>
         </article>
 
         <article className="info-card">
           <h2>Sobre a Pazu Wearbeach</h2>
           <p>
-            Marca pensada para quem ama o litoral. Buscamos materiais de melhor
-            qualidade, modelagens confortáveis e um visual leve e autêntico.
+            rapida descrição sobre  aloja
           </p>
         </article>
 
