@@ -1,3 +1,5 @@
+import './Home.css'
+
 const featuredProducts = [
   {
     id: 1,
