@@ -1,3 +1,11 @@
-React + vite
+Desenvolvimento do projeto do site de catalago de produtos da Pazu WearBeach.
+Projeto criado com React e Vite.
 
-desenvolvimento do projeto do site de ecom da pazu wearbeach
+Para inicializar o projeto no terminal, execute o comando:
+```
+npm install
+```
+Após a instalação, execute o comando:
+```
+npm run dev
+```
