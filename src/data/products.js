@@ -207,6 +207,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Pants',
     description: 'Effortlessly chic and naturally beautiful. Handmade crochet pants featuring a breezy, open-knit design with adjustable waist ties for the perfect fit. Made in Brazil.',
+    features: [],
     sizes: ['S', 'M', 'L'],
     price: { Piece: 65},
     images: [
@@ -223,6 +224,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Mini Skirt',
     description: 'Full of charm and functional. This skirt is not see-through and will be your perfect ally to create gorgeous looks to any occasion. Handmade in Brazil.',
+    features: [],
     sizes: ['S', 'M', 'L'],
     price: { Piece: 45},
     images: [
@@ -237,6 +239,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Sleeve',
     description: 'Open-knit and breathable, these crochet sleeves are your go-to layering piece. It pairs effortlessly with anything in your wardrobe, from beachwear to everyday looks. Handmade in Brazil. One-size-fits-all. ',
+    features: [],
     sizes: ['One Size'],
     price: {Piece: 35},
     images: [
@@ -251,6 +254,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Mini Shorts',
     description: 'These ultra-soft shorts are the perfect blend of style and comfort. Their breathable yet subtly closed pattern ensures its versatility, ideal for beach days or casual outings. Designed to flatter every body type, they enhance your natural curves and add a touch of effortless chic to any outfit.',
+    features: [],
     sizes: ['S', 'M', 'L'],
     price: { Piece: 25},
     images: [
@@ -266,6 +270,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Blue Pants and Shirt',
     description: 'Blue and white crochet set, featuring a button-up shirt and long pants with an open-knit pattern. Crafted from breathable materials, the lightweight design ensures you stay cool under the sun, making it an ideal cover-up for beach days, but also transitions effortlessly into everyday wear. Get creative!',
+    features: [],
     sizes: ['S', 'M', 'L'],
     price: { Top: 30, Bottom: 30, Set: 55},
     images: [
@@ -282,6 +287,7 @@ export const featuredProducts = [
     category: 'crochet',
     collection: 'Long Skirt and Top',
     description: 'This neutral-toned crochet set seamlessly blends elegance with comfort. Both pieces designed with an open-knit pattern that gracefully transitions into a more structured weave over the bust and hips (where it needs more coverage).',
+    features: [],
     sizes: ['S', 'M', 'L'],
     price: { Top: 18, Bottom: 27, Set: 40},
     images: [
@@ -314,6 +320,7 @@ export const featuredProducts = [
     category: 'accessories',
     collection: 'Scrunchie',
     description: 'Get scrunchies matching your favorite bikini set! All of our pieces are handmade in Brazil with the same biodegradable fabric as the sets. As an effort to reduce waste, our deadstock fabric (usually not used leftover textile after the cuts) is used to make these cute and eco-friendly scrunchies. ',
+    features: [],
     sizes: [],
     price: { Piece: 5},
     images: [
