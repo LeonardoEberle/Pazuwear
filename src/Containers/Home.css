@@ -79,12 +79,13 @@
 .section-header h2 {
   margin: 0 0 0.5rem;
   font-size: 1.75rem;
-  color: var(--text-dark);
+  color: var(--primary-color); /* Verde Oliva #6B7D3F */
 }
 
 .section-header p {
   margin: 0;
-  color: #666666;
+  color: var(--primary-color); /* Verde Oliva #6B7D3F */
+  opacity: 0.8;
 }
 
 .featured-grid {
@@ -162,7 +163,7 @@
 }
 
 .about-header {
-  background-color: var(--bg-secondary);
+  background-color: #d8e6ad; /* Novo tom de verde do print */
   padding: 4rem 2rem;
   width: 100%;
 }
@@ -174,15 +175,15 @@
 
 .about-header h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #2c3e2d;
+  font-size: 2.2rem;
+  color: #2c3e2d; /* Verde escuro para contraste sobre o fundo claro */
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
 .about-header p {
-  font-size: 1.1rem;
-  color: #4a5d4b;
+  font-size: 1.15rem;
+  color: #4a5d4b; /* Tom escuro complementar */
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
