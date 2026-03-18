@@ -13,19 +13,6 @@
   background-color: #ffffff;
 }
 
-header {
-  padding: 1.5rem 2rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 nav {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e5e5;

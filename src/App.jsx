@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './Containers/Home'
@@ -13,7 +12,6 @@ function App() {
   return (
     <div className="app">
       <div className="site-header">
-        <Header />
         <Navbar />
       </div>
       <Routes>
