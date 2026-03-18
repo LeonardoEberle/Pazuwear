@@ -1,4 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
+import heroBannerImg from '../assets/banner-fundo-hero.png'
 
 const featuredProducts = [
   {
@@ -71,11 +73,13 @@ const popularProducts = [
 ]
 
 function Home() {
+  const navigate = useNavigate()
+
   return (
     <main className="home">
-      <section className="hero">
+      <section className="hero" style={{ backgroundImage: `url(${heroBannerImg})` }}>
         <div className="hero-content">
-          <p className="hero-tagline">Nova coleção Pazu Wearbeach</p>
+          <p className="hero-tagline">Nova coleção Pazu Wearbeach disponivel</p>
           <h1>Moda praia sustentável para todos os dias de verão</h1>
           <p className="hero-text">
             Peças confortáveis, duráveis e pensadas para quem ama mar, areia e
@@ -84,7 +88,9 @@ function Home() {
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary">Comprar agora</button>
-            <button className="btn btn-outline">Ver catálogo</button>
+            <button className="btn btn-outline" onClick={() => navigate('/sobre')}>
+              Sobre nós
+            </button>
           </div>
         </div>
         <div className="hero-banner">

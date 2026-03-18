@@ -22,6 +22,19 @@ nav.transparent {
   background-color: transparent;
 }
 
+nav.transparent .navbar-links a {
+  color: #ffffff;
+}
+
+nav.transparent .navbar-links a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+nav.transparent .navbar-links li:hover a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 nav.scrolled {
   background-color: #f0f0d6;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
