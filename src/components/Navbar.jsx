@@ -1,9 +1,25 @@
+import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/PazuLogo.png'
 
 function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'scrolled' : 'transparent'}`}>
       <div className="navbar-inner">
         <div className="navbar-logo">
           <NavLink to="/" end>
