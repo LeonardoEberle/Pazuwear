@@ -33,13 +33,13 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/catalogo">Catálogo</NavLink>
+            <NavLink to="/catalogo">All Products</NavLink>
           </li>
           <li>
-            <NavLink to="/sobre">Sobre</NavLink>
+            <NavLink to="/sobre">About Us</NavLink>
           </li>
           <li>
-            <NavLink to="/contato">Contato</NavLink>
+            <NavLink to="/contato">Contact</NavLink>
           </li>
         </ul>
       </div>

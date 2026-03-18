@@ -1,6 +1,7 @@
 export const featuredProducts = [
   {
     id: 1,
+    tags: ['highlight'],
     label: 'Popular',
     category: 'beachwear',
     collection: 'Isis',
@@ -25,7 +26,8 @@ export const featuredProducts = [
   },
   {
     id: 2,
-    label: 'Popular',
+    tags: [],
+    label: 'Reversible',
     category: 'beachwear',
     collection: 'Maya',
     description: "The most versatile set you ever saw. All sets come with an extra pink strap allowing you to transform your bikini and create amazing styles.",
@@ -50,7 +52,8 @@ export const featuredProducts = [
   },
   {
     id: 3,
-    label: 'Popular',
+    tags: [],
+    label: 'Reversible',
     category: 'beachwear',
     collection: 'Jade',
     description: "A different design in a classic color.",
@@ -77,6 +80,7 @@ export const featuredProducts = [
   },
   {
     id: 4,
+    tags: ['highlight'],
     label: 'Popular',
     category: 'beachwear',
     collection: 'Gisele',
@@ -102,6 +106,7 @@ export const featuredProducts = [
   },
   {
     id: 5,
+    tags: [],
     label: 'Popular',
     category: 'beachwear',
     collection: 'Aurora',
@@ -128,7 +133,8 @@ export const featuredProducts = [
   },
   {
     id: 6,
-    label: 'Popular',
+    tags: ['highlight'],
+    label: 'Confortable',
     category: 'beachwear',
     collection: 'Camila',
     description: "Specially designed to flatter your curves, mixing comfort and style.",
@@ -153,7 +159,8 @@ export const featuredProducts = [
   },
   {
     id: 7,
-    label: 'Popular',
+    tags: ['highlight'],
+    label: 'Reversible',
     category: 'beachwear',
     collection: 'Yasmin',
     description: "The loved triangle shape with a pop of color.",
@@ -179,7 +186,8 @@ export const featuredProducts = [
   },
   {
     id: 8,
-    label: 'Popular',
+    tags: [],
+    label: 'Unique',
     category: 'beachwear',
     collection: 'Sofia',
     description: "That black onepiece that is a must in everyone's closet, designed to be worn in and out of the beach.",
@@ -203,6 +211,7 @@ export const featuredProducts = [
   },
   {
     id: 9,
+    tags: [],
     label: 'Popular',
     category: 'crochet',
     collection: 'Pants',
@@ -220,7 +229,8 @@ export const featuredProducts = [
   },
   {
     id: 10,
-    label: 'Popular',
+    tags: [],
+    label: 'Unique',
     category: 'crochet',
     collection: 'Mini Skirt',
     description: 'Full of charm and functional. This skirt is not see-through and will be your perfect ally to create gorgeous looks to any occasion. Handmade in Brazil.',
@@ -235,7 +245,8 @@ export const featuredProducts = [
   },
   {
     id: 11,
-    label: 'Popular',
+    tags: ['highlight'],
+    label: 'Hot',
     category: 'crochet',
     collection: 'Sleeve',
     description: 'Open-knit and breathable, these crochet sleeves are your go-to layering piece. It pairs effortlessly with anything in your wardrobe, from beachwear to everyday looks. Handmade in Brazil. One-size-fits-all. ',
@@ -250,6 +261,7 @@ export const featuredProducts = [
   },
   {
     id: 12,
+    tags: [],
     label: 'Popular',
     category: 'crochet',
     collection: 'Mini Shorts',
@@ -266,6 +278,7 @@ export const featuredProducts = [
   },
   {
     id: 13,
+    tags: ['highlight'],
     label: 'Popular',
     category: 'crochet',
     collection: 'Blue Pants and Shirt',
@@ -283,6 +296,7 @@ export const featuredProducts = [
   },
   {
     id: 14,
+    tags: [],
     label: 'Popular',
     category: 'crochet',
     collection: 'Long Skirt and Top',
@@ -301,6 +315,7 @@ export const featuredProducts = [
   },
   {
     id: 15,
+    tags: ['highlight'],
     label: 'Popular',
     category: 'accessories',
     collection: 'Flower Hair',
@@ -309,13 +324,14 @@ export const featuredProducts = [
     sizes: [],
     price: { Mini: 3, Regular: 5},
     images: [
-      new URL('../assets/colecoes/aflowehairclip-1.png', import.meta.url).href,
-      new URL('../assets/colecoes/aflowehairclip-2.png', import.meta.url).href,
-      new URL('../assets/colecoes/aflowehairclip-3.png', import.meta.url).href,
+      new URL('../assets/colecoes/aflowerhairclip-1.png', import.meta.url).href,
+      new URL('../assets/colecoes/aflowerhairclip-2.png', import.meta.url).href,
+      new URL('../assets/colecoes/aflowerhairclip-3.png', import.meta.url).href,
     ],
   },
   {
     id: 16,
+    tags: [],
     label: 'Popular',
     category: 'accessories',
     collection: 'Scrunchie',
