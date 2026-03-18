@@ -1,76 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import './Home.css'
 import heroBannerImg from '../assets/banner-fundo-hero.png'
-
-const featuredProducts = [
-  {
-    id: 1,
-    label: 'Eco friendly',
-    title: 'Biquíni em fibra reciclada',
-    price: 'R$ 299',
-  },
-  {
-    id: 2,
-    label: 'Nova coleção',
-    title: 'Kit saída de praia',
-    price: 'R$ 489',
-  },
-  {
-    id: 3,
-    label: 'Best seller',
-    title: 'Maiô costas abertas',
-    price: 'R$ 954',
-  },
-  {
-    id: 4,
-    label: 'Essenciais',
-    title: 'Top + bottom liso',
-    price: 'R$ 99',
-  },
-]
-
-const popularProducts = [
-  {
-    id: 1,
-    name: 'Chapéu de palha',
-    price: 'R$ 149',
-  },
-  {
-    id: 2,
-    name: 'Bolsa praia eco',
-    price: 'R$ 199',
-  },
-  {
-    id: 3,
-    name: 'Saída de praia leve',
-    price: 'R$ 259',
-  },
-  {
-    id: 4,
-    name: 'Sandália conforto',
-    price: 'R$ 189',
-  },
-  {
-    id: 5,
-    name: 'Óculos de sol retro',
-    price: 'R$ 229',
-  },
-  {
-    id: 6,
-    name: 'Canga estampada',
-    price: 'R$ 129',
-  },
-  {
-    id: 7,
-    name: 'Biquíni listrado',
-    price: 'R$ 299',
-  },
-  {
-    id: 8,
-    name: 'Body beachwear',
-    price: 'R$ 349',
-  },
-]
+import { featuredProducts, popularProducts } from '../data/products'
 
 function Home() {
   const navigate = useNavigate()
