@@ -2,6 +2,7 @@
   padding-top: 0;
 }
 
+/* Hero */
 .sobre-hero {
   display: flex;
   align-items: center;
@@ -13,16 +14,13 @@
   position: relative;
   text-align: center;
   color: #ffffff;
-  margin-top: -120px; /* Aligns with Navbar */
+  margin-top: -120px;
 }
 
 .sobre-hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
@@ -56,32 +54,158 @@
   opacity: 0.9;
 }
 
-.sobre-content {
+/* Shared section styles */
+.sobre-section {
   padding: 5rem 2rem;
   background-color: #F5F5DC;
+}
+
+.sobre-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Section 1 — Who Are We */
+.who-we-are .sobre-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.who-text h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.who-text p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-indent: 1.5rem;
+}
+
+.who-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Section 2 — Sustainability */
+.sustainability {
+  background-color: #eef0e8;
+}
+
+.sust-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sust-images {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sust-images img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.sust-text h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
   text-align: center;
 }
 
-.sobre-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--text-dark);
-}
-
-.sobre-content p {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.15rem;
-  line-height: 1.8;
+.sust-text p {
+  font-size: 1.05rem;
   color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-indent: 1.5rem;
 }
 
-@media (max-width: 768px) {
+.sust-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sust-features li {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Section 3 — Ethics */
+.ethics-intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.ethics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.ethics-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ethics-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ethics-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.ethics-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .who-we-are .sobre-container,
+  .sust-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ethics-grid {
+    grid-template-columns: 1fr;
+  }
+
   .sobre-hero h1 {
     font-size: 2.5rem;
-  }
-  
-  .sobre-hero p {
-    font-size: 1.1rem;
   }
 }
