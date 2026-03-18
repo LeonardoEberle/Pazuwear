@@ -84,8 +84,8 @@ function Home() {
                     ? `Starting at $ ${Math.min(...Object.values(product.price).filter(v => typeof v === 'number'))}`
                     : `$ ${product.price}`}
                 </p>
-                <button className="btn btn-link" onClick={() => navigate(`/produto/${product.id}`)}>
-                  See More
+                <button className="btn btn-secondary" onClick={() => navigate(`/produto/${product.id}`)}>
+                  View Product
                 </button>
               </div>
             </article>
