@@ -48,23 +48,21 @@ function Home() {
           <h1>Sustainable swimwear for every summer day</h1>
           <p className="hero-text">
             Comfortable, durable pieces designed for those who love the ocean, the sand, and 
-  style. Mix and match bikinis, bodysuits, and accessories in a simple and 
-  inspiring shopping experience.
+            style. Mix and match bikinis, bodysuits, and accessories in a simple and 
+            inspiring shopping experience.
           </p>
           <div className="hero-actions">
-            <button className="btn btn-primary"onClick={() => navigate('/catalogo')}>Buy Now</button>
+            <button className="btn btn-primary" onClick={() => navigate('/catalogo')}>Buy Now</button>
             <button className="btn btn-outline" onClick={() => navigate('/sobre')}>About Us</button>
           </div>
         </div>
       </section>
 
-
-
       <section className="home-section">
         <div className="section-header">
           <h2>Week Highlights</h2>
           <p>
-            A special selection of this weeks trending products.
+            A special selection of this week's trending products.
           </p>
         </div>
 
@@ -106,15 +104,15 @@ function Home() {
         <div className="about-gallery">
           <div className="gallery-left">
             <div className="gallery-small-item">
-              <img src={aboutImgSmall1} />
+              <img src={aboutImgSmall1} alt="Sustainability Details" />
             </div>
             <div className="gallery-small-item">
-              <img src={aboutImgSmall2} />
+              <img src={aboutImgSmall2} alt="Sustainable Beachwear" />
             </div>
           </div>
           <div className="gallery-right">
             <div className="gallery-large-item">
-              <img src={aboutImgLarge} />
+              <img src={aboutImgLarge} alt="PAZÜ Brand Mission" />
             </div>
           </div>
         </div>
@@ -143,10 +141,10 @@ function Home() {
                 <h3>{product.collection}</h3>
                 <p className="product-price">
                   {product.price && typeof product.price === 'object'
-                    ? `R$ ${Object.values(product.price).join(' / ')}`
-                    : `R$ ${product.price}`}
+                    ? `$ ${Object.values(product.price).join(' / ')}`
+                    : `$ ${product.price}`}
                 </p>
-                <button className="btn btn-secondary">Product</button>
+                <button className="btn btn-secondary">View Product</button>
               </div>
             </article>
           ))}
@@ -155,7 +153,7 @@ function Home() {
 
       <section className="home-section info-grid">
         <article className="info-card">
-          <h2> What makes us different?</h2>
+          <h2>What makes us different?</h2>
           <ul>
             <li>Biodegradable Fabric</li>
             <li>Brazilian Style</li>
@@ -177,13 +175,12 @@ function Home() {
         <article className="info-card">
           <h2>Newsletter</h2>
           <p>
-            Receba novidades, lançamentos exclusivos e ofertas especiais direto
-            no seu e-mail.
+            Receive news, exclusive launches and special offers straight to your email.
           </p>
           <form className="newsletter-form">
-            <input type="email" placeholder="Seu e-mail" />
+            <input type="email" placeholder="Your email" />
             <button className="btn btn-primary" type="submit">
-              Quero receber
+              Sign Up
             </button>
           </form>
         </article>

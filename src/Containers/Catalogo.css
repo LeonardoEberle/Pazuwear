@@ -1,0 +1,142 @@
+.catalogo-page {
+  padding-top: 0;
+}
+
+.catalogo-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  margin-top: -120px;
+}
+
+.catalogo-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.catalogo-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.catalogo-hero-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.catalogo-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.catalogo-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.catalogo-content {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.75rem 2rem;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.filter-btn.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-grids-container {
+  position: relative;
+  min-height: 400px;
+}
+
+.category-grid-view {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.category-grid-view.visible {
+  display: block;
+  opacity: 1;
+}
+
+.catalogo-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Reuse Home.css product grid styles or ensure they are global */
+.catalogo-content .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .catalogo-content .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .catalogo-hero h1 {
+    font-size: 2.5rem;
+  }
+  .catalogo-content .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .catalogo-content .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

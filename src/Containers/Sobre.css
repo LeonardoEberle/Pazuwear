@@ -1,0 +1,87 @@
+.sobre-page {
+  padding-top: 0;
+}
+
+.sobre-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  margin-top: -120px; /* Aligns with Navbar */
+}
+
+.sobre-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.sobre-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.sobre-hero-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.sobre-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.sobre-hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.sobre-content {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.sobre-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+
+.sobre-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .sobre-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .sobre-hero p {
+    font-size: 1.1rem;
+  }
+}
