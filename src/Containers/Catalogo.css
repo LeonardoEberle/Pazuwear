@@ -6,14 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  min-height: 350px;
+  min-height: clamp(16rem, 42vw, 50vh);
   background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
   color: #ffffff;
-  margin-top: -120px;
+  margin-top: var(--header-offset);
+  padding: clamp(3rem, 10vw, 5rem) var(--gutter);
 }
 
 .catalogo-hero::before {
@@ -30,71 +30,67 @@
 .catalogo-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 2rem;
-}
-
-.catalogo-hero-tag {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .catalogo-hero h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.85rem, 5.5vw, 3.5rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .catalogo-hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.6;
   opacity: 0.9;
+  margin: 0;
 }
 
 .catalogo-content {
-  padding: 4rem 2rem;
-  background-color: #F5F5DC;
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter);
+  background-color: #f5f5dc;
 }
 
 .category-filters {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  align-items: center;
+  gap: 0.65rem 0.75rem;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
 }
 
 .filter-btn {
-  padding: 0.75rem 2rem;
+  padding: 0.65rem 1.15rem;
   border: 1px solid #ddd;
   background: #ffffff;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: 600;
   color: #666;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: 44px;
+  font-family: inherit;
 }
 
 .filter-btn:hover {
-  border-color: #005F6B;
-  color: #005F6B;
+  border-color: #005f6b;
+  color: #005f6b;
 }
 
 .filter-btn.active {
-  background-color: #005F6B;
-  border-color: #005F6B;
+  background-color: #005f6b;
+  border-color: #005f6b;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .category-grids-container {
   position: relative;
-  min-height: 400px;
+  min-height: 12rem;
 }
 
 .category-grid-view {
@@ -113,30 +109,32 @@
   margin: 0 auto;
 }
 
-/* Reuse Home.css product grid styles or ensure they are global */
 .catalogo-content .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 480px) {
   .catalogo-content .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) {
-  .catalogo-hero h1 {
-    font-size: 2.5rem;
-  }
-  .catalogo-content .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 768px) {
+  .filter-btn {
+    padding: 0.75rem 1.75rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 1024px) {
   .catalogo-content .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalogo-content .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

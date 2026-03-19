@@ -6,14 +6,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  min-height: 350px;
+  min-height: clamp(16rem, 45vw, 50vh);
   background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
   color: #ffffff;
-  margin-top: -120px;
+  margin-top: var(--header-offset);
+  padding: clamp(3rem, 10vw, 5rem) var(--gutter);
 }
 
 .contato-hero::before {
@@ -30,34 +30,26 @@
 .contato-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 2rem;
-}
-
-.contato-hero-tag {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .contato-hero h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.85rem, 5.5vw, 3.5rem);
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .contato-hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.6;
   opacity: 0.9;
+  margin: 0;
 }
 
 .contato-content {
-  padding: 5rem 2rem;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
   background-color: var(--bg-main);
 }
 
@@ -68,14 +60,17 @@
 
 .contato-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 5rem;
-  margin-bottom: 6rem;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: clamp(3rem, 8vw, 6rem);
 }
 
-.contato-info h2, .faq-container h2, .policy-section h2, .contato-footer h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
+.contato-info h2,
+.faq-container h2,
+.policy-section h2,
+.contato-footer h2 {
+  font-size: clamp(1.45rem, 4vw, 2.2rem);
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
   color: var(--primary-color);
   font-family: 'Playfair Display', serif;
 }
@@ -102,7 +97,7 @@
 }
 
 .info-item p {
-  font-size: 1.3rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   color: var(--text-dark);
   font-weight: 600;
   margin: 0;
@@ -111,7 +106,7 @@
 .faq-container {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .faq-item {
@@ -125,14 +120,16 @@
   align-items: center;
   background: none;
   border: none;
-  padding: 1.2rem 0;
+  padding: 1rem 0;
+  min-height: 48px;
   cursor: pointer;
   text-align: left;
   gap: 1rem;
+  font-family: inherit;
 }
 
 .faq-question span:first-child {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
   font-weight: 600;
   color: var(--text-dark);
 }
@@ -147,7 +144,9 @@
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.35s ease;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
   padding: 0;
 }
 
@@ -179,38 +178,39 @@
 }
 
 .policy-section {
-  margin-top: 6rem;
-  padding-top: 6rem;
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding-top: clamp(3rem, 8vw, 6rem);
   border-top: 1px solid #ddd;
 }
 
 .policy-intro {
-  font-size: 1.15rem;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
   color: #555;
-  margin-bottom: 3rem;
-  max-width: 800px;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  max-width: 50rem;
 }
 
 .policy-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .policy-card {
   background: #ffffff;
-  padding: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .policy-card h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
   margin-bottom: 1.5rem;
   color: var(--cta-color);
 }
 
-.policy-card ul, .policy-card ol {
+.policy-card ul,
+.policy-card ol {
   padding-left: 1.2rem;
   color: #666;
   line-height: 1.6;
@@ -221,11 +221,11 @@
 }
 
 .contato-footer {
-  margin-top: 6rem;
+  margin-top: clamp(3rem, 8vw, 6rem);
   text-align: center;
-  padding: 4rem;
+  padding: clamp(1.75rem, 5vw, 4rem) var(--gutter);
   background-color: #d4e8b0;
-  border-radius: 2rem;
+  border-radius: clamp(1rem, 3vw, 2rem);
 }
 
 .contato-footer h2 {
@@ -233,29 +233,21 @@
 }
 
 .contato-footer p {
-  font-size: 1.2rem;
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
   color: #444;
   max-width: 700px;
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .policy-grid {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  .contato-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .contato-hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .contato-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-  
-  .contato-footer {
-    padding: 2rem;
+@media (min-width: 1024px) {
+  .policy-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

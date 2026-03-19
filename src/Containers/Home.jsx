@@ -44,7 +44,6 @@ function Home() {
     <main className="home">
       <section className="hero" style={{ backgroundImage: `url(${heroBannerImg})` }}>
         <div className="hero-content">
-          <p className="hero-tagline">New PAZÜ Swimwear collection available</p>
           <h1>Sustainable swimwear for every summer day</h1>
           <p className="hero-text">
             Comfortable, durable pieces designed for those who love the ocean, the sand, and 

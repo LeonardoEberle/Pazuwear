@@ -1,5 +1,5 @@
 .produto-page {
-  background-color: #F5F5DC;
+  background-color: #f5f5dc;
   min-height: 100vh;
   padding-top: 0;
 }
@@ -8,14 +8,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25vh;
-  min-height: 180px;
+  min-height: clamp(10rem, 28vw, 25vh);
   background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
   color: #ffffff;
-  margin-top: -120px;
+  margin-top: var(--header-offset);
+  padding: clamp(2rem, 6vw, 3rem) var(--gutter);
 }
 
 .produto-hero::before {
@@ -29,13 +29,13 @@
 .produto-hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 2rem;
+  padding: 0;
 }
 
 .produto-hero-tag {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
   letter-spacing: 0.2em;
   color: var(--accent-color);
   margin-bottom: 0.75rem;
@@ -43,7 +43,7 @@
 }
 
 .produto-hero h1 {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 700;
   margin: 0;
 }
@@ -52,25 +52,29 @@
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 4rem);
   align-items: start;
-  padding: 4rem 2rem 5rem;
+  padding: clamp(2rem, 5vw, 4rem) var(--gutter) clamp(2.5rem, 6vw, 5rem);
 }
 
-/* ── Gallery ── */
+/* ── Gallery (mobile: main on top, thumbs below as row) ── */
 .produto-gallery {
   display: flex;
+  flex-direction: column-reverse;
   gap: 1rem;
 }
 
 .gallery-thumbnails {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.6rem;
-  max-height: 560px;
-  overflow-y: auto;
+  max-height: none;
+  overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: thin;
+  padding-bottom: 0.25rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .thumb-btn {
@@ -115,11 +119,11 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255, 255, 255, 0.75);
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
@@ -131,11 +135,16 @@
 }
 
 .gallery-arrow:hover {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
 }
 
-.gallery-arrow.left { left: 0.6rem; }
-.gallery-arrow.right { right: 0.6rem; }
+.gallery-arrow.left {
+  left: 0.6rem;
+}
+
+.gallery-arrow.right {
+  right: 0.6rem;
+}
 
 .gallery-dots {
   position: absolute;
@@ -147,10 +156,10 @@
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -175,7 +184,7 @@
 }
 
 .produto-title {
-  font-size: 2.4rem;
+  font-size: clamp(1.65rem, 4vw, 2.4rem);
   color: var(--primary-color);
   font-family: 'Playfair Display', serif;
   margin: 0;
@@ -202,7 +211,7 @@
 }
 
 .produto-price-single {
-  font-size: 1.8rem;
+  font-size: clamp(1.45rem, 3.5vw, 1.8rem);
   font-weight: 700;
   color: var(--cta-color);
   margin: 0;
@@ -221,10 +230,11 @@
   justify-content: space-between;
   border: 2px solid #ccc;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.65rem 0.85rem;
   background: #fff;
   transition: border-color 0.2s;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .piece-row.selected {
@@ -240,13 +250,15 @@
   border: none;
   cursor: pointer;
   flex: 1;
+  min-width: 0;
   text-align: left;
   padding: 0;
+  min-height: 44px;
 }
 
 .piece-check {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   border: 2px solid #ccc;
   border-radius: 4px;
   display: flex;
@@ -286,8 +298,8 @@
 }
 
 .qty-btn {
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   border: 2px solid var(--primary-color);
   border-radius: 50%;
   background: none;
@@ -299,7 +311,9 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .qty-btn:hover {
@@ -332,6 +346,7 @@
   color: var(--cta-color);
   font-size: 1.1rem;
 }
+
 .produto-selection {
   display: flex;
   flex-direction: column;
@@ -351,17 +366,21 @@
 }
 
 .option-btn {
-  padding: 0.5rem 1.1rem;
+  padding: 0.55rem 1.1rem;
   border: 2px solid #ccc;
   border-radius: 0.4rem;
   background: #fff;
   cursor: pointer;
   font-size: 0.95rem;
   color: var(--text-dark);
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  min-height: 44px;
 }
 
 .option-btn:hover {
@@ -421,6 +440,9 @@
   text-decoration: none;
   display: inline-block;
   transition: opacity 0.2s;
+  min-height: 48px;
+  line-height: 1.2;
+  box-sizing: border-box;
 }
 
 .buy-btn.disabled {
@@ -437,27 +459,50 @@
 /* ── Not found ── */
 .produto-not-found {
   text-align: center;
-  padding: 6rem 2rem;
+  padding: clamp(3rem, 12vw, 6rem) var(--gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
 }
 
-/* ── Responsive ── */
-@media (max-width: 860px) {
+@media (min-width: 900px) {
   .produto-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
   }
 
   .produto-gallery {
-    flex-direction: column-reverse;
+    flex-direction: row;
   }
 
   .gallery-thumbnails {
-    flex-direction: row;
-    max-height: unset;
-    overflow-x: auto;
-    overflow-y: hidden;
+    flex-direction: column;
+    max-height: 560px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 0;
+  }
+
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .qty-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .piece-toggle {
+    min-height: unset;
+  }
+
+  .option-btn {
+    min-height: unset;
+  }
+
+  .buy-btn {
+    min-height: unset;
   }
 }
