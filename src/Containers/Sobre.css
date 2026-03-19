@@ -2,19 +2,18 @@
   padding-top: 0;
 }
 
-/* Hero */
 .sobre-hero {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
-  min-height: 400px;
+  min-height: clamp(18rem, 52vw, 60vh);
   background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
   color: #ffffff;
-  margin-top: -120px;
+  margin-top: var(--header-offset);
+  padding: clamp(3rem, 10vw, 5rem) var(--gutter);
 }
 
 .sobre-hero::before {
@@ -28,36 +27,27 @@
 .sobre-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  padding: 0 2rem;
-}
-
-.sobre-hero-tag {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
-  font-weight: 600;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .sobre-hero h1 {
-  font-size: 3.5rem;
+  font-size: clamp(1.85rem, 5.5vw, 3.5rem);
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
 .sobre-hero p {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
   line-height: 1.6;
   opacity: 0.9;
+  margin: 0;
 }
 
-/* Shared section styles */
 .sobre-section {
-  padding: 5rem 2rem;
-  background-color: #F5F5DC;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
+  background-color: #f5f5dc;
 }
 
 .sobre-container {
@@ -65,16 +55,15 @@
   margin: 0 auto;
 }
 
-/* Section 1 — Who Are We */
 .who-we-are .sobre-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 4rem);
   align-items: center;
 }
 
 .who-text h2 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
@@ -95,15 +84,14 @@
   border-radius: 0.5rem;
 }
 
-/* Section 2 — Sustainability */
 .sustainability {
   background-color: #eef0e8;
 }
 
 .sust-layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 4rem);
   align-items: start;
 }
 
@@ -120,7 +108,7 @@
 }
 
 .sust-text h2 {
-  font-size: 2.2rem;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
@@ -152,18 +140,17 @@
   border-left: 3px solid var(--primary-color);
 }
 
-/* Section 3 — Ethics */
 .ethics-intro {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
   color: #555;
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
 }
 
 .ethics-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .ethics-card {
@@ -182,7 +169,7 @@
 }
 
 .ethics-card h3 {
-  font-size: 1.4rem;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
   color: var(--primary-color);
   margin-bottom: 0.75rem;
 }
@@ -194,18 +181,16 @@
   margin-bottom: 0.5rem;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .who-we-are .sobre-container,
+@media (min-width: 900px) {
+  .who-we-are .sobre-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .sust-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1.4fr;
   }
 
   .ethics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre-hero h1 {
-    font-size: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

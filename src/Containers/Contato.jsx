@@ -59,7 +59,6 @@ function Contato() {
     <main className="contato-page">
       <section className="contato-hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="contato-hero-content">
-          <span className="contato-hero-tag">Get in touch</span>
           <h1>Contact Us</h1>
           <p>Have any questions or just want to say hi? We'd love to hear from you.</p>
         </div>

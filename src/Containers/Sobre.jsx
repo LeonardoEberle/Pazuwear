@@ -12,7 +12,6 @@ function Sobre() {
     <main className="sobre-page">
       <section className="sobre-hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="sobre-hero-content">
-          <span className="sobre-hero-tag">About PAZÜ</span>
           <h1>Our Story & Mission</h1>
           <p>Driven by passion, inspired by nature, and committed to a more sustainable future for fashion.</p>
         </div>

@@ -22,7 +22,6 @@ function Catalogo() {
     <main className="catalogo-page">
       <section className="catalogo-hero" style={{ backgroundImage: `url(${heroImg})` }}>
         <div className="catalogo-hero-content">
-          <span className="catalogo-hero-tag">Full Collection</span>
           <h1>All Products</h1>
           <p>
             Explore our complete range of sustainable beachwear, handmade crochet, and eco-friendly accessories.

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer style={{ textAlign: 'center' }}>
+    <footer className="site-footer">
       <p>Pazu Wearbeach © {new Date().getFullYear()}</p>
     </footer>
   )
