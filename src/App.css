@@ -3,7 +3,24 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg-main);
-  color: var(--text-dark);
+  color: var(--text-primary);
+}
+
+.page-wrapper {
+  flex: 1;
+  opacity: 0;
+  transition: opacity 0.3s var(--transition);
+}
+
+.page-wrapper.page-enter {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-wrapper {
+    opacity: 1;
+    transition: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -12,6 +29,8 @@
   }
 }
 
+/* ── Site Header ── */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -19,9 +38,14 @@
   background-color: transparent;
 }
 
+/* ── Navbar ── */
+
 nav.navbar {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  border-bottom: none;
+  transition:
+    background-color 0.35s var(--transition),
+    backdrop-filter 0.35s var(--transition),
+    border-color 0.35s var(--transition);
+  border-bottom: 1px solid transparent;
   position: relative;
 }
 
@@ -35,29 +59,31 @@ nav.transparent .navbar-links a {
 
 nav.transparent .navbar-links a.active {
   color: #ffffff;
-  border-bottom: 2px solid #ffffff;
+  font-weight: 600;
 }
 
 nav.transparent .navbar-links li:hover a {
-  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.7;
 }
 
 nav.scrolled {
-  background-color: var(--bg-main);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(251, 251, 249, 0.92);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom-color: var(--border-color);
 }
 
 nav.scrolled .navbar-links a {
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 nav.scrolled .navbar-links a.active {
-  color: var(--primary-color);
-  border-bottom-color: var(--primary-color);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 nav.scrolled .navbar-links li:hover a {
-  color: var(--primary-color);
+  color: var(--text-secondary);
 }
 
 .navbar-inner {
@@ -76,7 +102,6 @@ nav.scrolled .navbar-links li:hover a {
   display: block;
 }
 
-/* Mobile menu toggle */
 .navbar-menu-toggle {
   display: flex;
   align-items: center;
@@ -88,13 +113,13 @@ nav.scrolled .navbar-links li:hover a {
   background: transparent;
   cursor: pointer;
   border-radius: 0.35rem;
-  color: var(--text-dark);
+  color: var(--text-primary);
   z-index: 55;
   flex-shrink: 0;
 }
 
 .navbar-menu-toggle:focus-visible {
-  outline: 2px solid var(--cta-color);
+  outline: 2px solid var(--accent-color);
   outline-offset: 2px;
 }
 
@@ -104,7 +129,7 @@ nav.transparent:not(.menu-open) .navbar-menu-toggle {
 
 nav.transparent.menu-open .navbar-menu-toggle,
 nav.scrolled .navbar-menu-toggle {
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 .navbar-menu-icon {
@@ -118,13 +143,13 @@ nav.scrolled .navbar-menu-toggle {
 
 .navbar-menu-icon span {
   display: block;
-  height: 2px;
+  height: 1.5px;
   width: 100%;
   background: currentColor;
   border-radius: 1px;
   transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+    transform 0.25s var(--transition),
+    opacity 0.25s var(--transition);
 }
 
 nav.menu-open .navbar-menu-icon span:nth-child(1) {
@@ -146,18 +171,14 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
   border: none;
   padding: 0;
   margin: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  animation: navbar-backdrop-in 0.2s ease;
+  animation: navbar-backdrop-in 0.25s var(--transition);
 }
 
 @keyframes navbar-backdrop-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .navbar-links {
@@ -166,13 +187,13 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
   display: flex;
   flex-direction: column;
   gap: 0;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .navbar-links li {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-links li:last-child {
@@ -185,12 +206,12 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
   min-height: 48px;
   padding: 0.75rem 0;
   text-decoration: none;
-  border-bottom: none;
+  transition: color 0.2s var(--transition), opacity 0.2s var(--transition);
 }
 
 .navbar-links a.active {
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--text-primary);
 }
 
 /* Mobile drawer */
@@ -208,9 +229,9 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
     max-width: 100%;
     padding: 5.25rem 1.5rem 2rem;
     background-color: var(--bg-main);
-    box-shadow: -6px 0 28px rgba(0, 0, 0, 0.18);
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
     transform: translateX(100%);
-    transition: transform 0.28s ease;
+    transition: transform 0.3s var(--transition);
     z-index: 50;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -220,20 +241,18 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
     transform: translateX(0);
   }
 
-  /* Drawer always uses readable text on solid background */
   nav.transparent .navbar-links a,
   nav.transparent .navbar-links a.active {
-    color: var(--text-dark);
-    border-bottom: none;
+    color: var(--text-primary);
   }
 
   nav.transparent .navbar-links a.active {
-    color: var(--primary-color);
-    box-shadow: inset 3px 0 0 var(--primary-color);
+    color: var(--accent-color);
+    box-shadow: inset 3px 0 0 var(--accent-color);
   }
 
   nav.transparent .navbar-links li:hover a {
-    color: var(--primary-color);
+    color: var(--accent-color);
   }
 }
 
@@ -260,7 +279,7 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: clamp(1rem, 2.5vw, 2.5rem);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     width: auto;
     height: auto;
     padding: 0;
@@ -269,7 +288,7 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
     transform: none;
     transition: none;
     overflow: visible;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
 
   .navbar-links li {
@@ -282,12 +301,9 @@ nav.menu-open .navbar-menu-icon span:nth-child(3) {
     padding: 0;
   }
 
-  nav.transparent .navbar-links a.active {
-    border-bottom: 2px solid #ffffff;
-  }
-
   nav.scrolled .navbar-links a.active {
-    border-bottom: 2px solid var(--primary-color);
+    color: var(--text-primary);
+    font-weight: 600;
   }
 }
 
@@ -295,73 +311,157 @@ nav li {
   cursor: pointer;
 }
 
-nav li:hover {
-  color: var(--primary-color);
-}
+/* ── Footer ── */
 
 .site-footer {
-  margin-top: auto;
-  padding: clamp(1.25rem, 3vw, 1.75rem) var(--gutter);
   background-color: var(--bg-secondary);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  text-align: center;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
 }
 
-.site-footer p {
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) var(--gutter);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-brand p {
+  margin: 0.5rem 0 0;
+  max-width: 24rem;
+  line-height: 1.6;
+}
+
+.footer-brand img {
+  max-height: 3.5rem;
+  width: auto;
+}
+
+.footer-nav h4,
+.footer-social h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  color: var(--text-secondary);
+  transition: color 0.2s var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--text-primary);
+}
+
+.footer-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-social-links a {
+  color: var(--text-secondary);
+  transition: color 0.2s var(--transition);
+}
+
+.footer-social-links a:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem var(--gutter);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.footer-bottom p {
   margin: 0;
 }
 
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ── Buttons ── */
+
 .btn {
   border-radius: 999px;
-  border: 1px solid transparent;
-  padding: 0.65rem 1.4rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  border: 1.5px solid transparent;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   font-family: inherit;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    opacity 0.2s var(--transition),
+    transform 0.15s var(--transition),
+    background-color 0.2s var(--transition),
+    border-color 0.2s var(--transition);
   min-height: 44px;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 @media (min-width: 768px) {
   .btn {
     min-height: unset;
+    padding: 0.85rem 2rem;
   }
 }
 
 .btn-primary {
-  background-color: var(--cta-color);
+  background-color: var(--accent-color);
   color: #ffffff;
+  border-color: var(--accent-color);
 }
 
 .btn-primary:hover {
-  background-color: #004d57;
-  box-shadow: 0 8px 18px rgba(0, 95, 107, 0.35);
+  opacity: 0.88;
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--cta-color);
-  border-color: var(--cta-color);
+  color: var(--text-primary);
+  border-color: var(--text-primary);
 }
 
 .btn-outline:hover {
-  background-color: rgba(0, 95, 107, 0.1);
+  background-color: var(--text-primary);
+  color: #ffffff;
 }
 
 .btn-secondary {
   background-color: var(--bg-secondary);
-  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-primary);
+  border-color: var(--border-color);
 }
 
 .btn-secondary:hover {
-  background-color: #c4a780;
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .btn-link {
@@ -369,18 +469,20 @@ nav li:hover {
   border: none;
   padding: 0;
   min-height: unset;
-  color: var(--cta-color);
+  color: var(--accent-color);
+  font-weight: 500;
 }
 
 .btn-link:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
 .badge-promo {
   background-color: var(--accent-color);
   color: #ffffff;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }

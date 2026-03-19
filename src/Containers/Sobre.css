@@ -20,34 +20,40 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   z-index: 1;
 }
 
 .sobre-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 50rem;
+  max-width: 42rem;
   margin: 0 auto;
   padding: 0;
+  animation: hero-fade-up 0.8s var(--transition) both;
 }
 
 .sobre-hero h1 {
-  font-size: clamp(1.85rem, 5.5vw, 3.5rem);
-  margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .sobre-hero p {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
-  line-height: 1.6;
-  opacity: 0.9;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }
 
 .sobre-section {
-  padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
-  background-color: #f5f5dc;
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter);
+  background-color: var(--bg-main);
 }
 
 .sobre-container {
@@ -58,20 +64,21 @@
 .who-we-are .sobre-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.75rem, 4vw, 4rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
 
 .who-text h2 {
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .who-text p {
   font-size: 1.05rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1rem;
   text-indent: 1.5rem;
@@ -81,43 +88,44 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
 }
 
 .sustainability {
-  background-color: #eef0e8;
+  background-color: var(--bg-secondary);
 }
 
 .sust-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.75rem, 4vw, 4rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
 
 .sust-images {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .sust-images img {
   width: 100%;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   object-fit: cover;
 }
 
 .sust-text h2 {
   font-size: clamp(1.5rem, 4vw, 2.2rem);
-  color: var(--primary-color);
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   text-align: center;
 }
 
 .sust-text p {
   font-size: 1.05rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1rem;
   text-indent: 1.5rem;
@@ -126,7 +134,7 @@
 .sust-features {
   list-style: none;
   padding: 0;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -134,15 +142,15 @@
 
 .sust-features li {
   font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+  color: var(--text-secondary);
+  line-height: 1.7;
   padding-left: 1rem;
-  border-left: 3px solid var(--primary-color);
+  border-left: 2px solid var(--accent-color);
 }
 
 .ethics-intro {
   font-size: clamp(1rem, 2.2vw, 1.1rem);
-  color: #555;
+  color: var(--text-secondary);
   margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
 }
@@ -164,19 +172,20 @@
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   margin-bottom: 1.25rem;
 }
 
 .ethics-card h3 {
-  font-size: clamp(1.15rem, 3vw, 1.4rem);
-  color: var(--primary-color);
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
+  font-weight: 700;
 }
 
 .ethics-card p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }

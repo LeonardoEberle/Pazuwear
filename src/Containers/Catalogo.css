@@ -19,38 +19,41 @@
 .catalogo-hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
   z-index: 1;
 }
 
 .catalogo-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 50rem;
+  max-width: 42rem;
   margin: 0 auto;
   padding: 0;
+  animation: hero-fade-up 0.8s var(--transition) both;
 }
 
 .catalogo-hero h1 {
-  font-size: clamp(1.85rem, 5.5vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .catalogo-hero p {
-  font-size: clamp(1rem, 2.3vw, 1.2rem);
-  line-height: 1.6;
-  opacity: 0.9;
+  font-size: clamp(1rem, 2.3vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
 }
 
 .catalogo-content {
-  padding: clamp(2rem, 5vw, 4rem) var(--gutter);
-  background-color: #f5f5dc;
+  padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
+  background-color: var(--bg-main);
 }
 
 .category-filters {
@@ -58,34 +61,36 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.65rem 0.75rem;
-  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  gap: 0.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .filter-btn {
-  padding: 0.65rem 1.15rem;
-  border: 1px solid #ddd;
-  background: #ffffff;
+  padding: 0.6rem 1.25rem;
+  border: 1.5px solid var(--border-color);
+  background: transparent;
   border-radius: 999px;
-  font-size: clamp(0.85rem, 2vw, 1rem);
-  font-weight: 600;
-  color: #666;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  font-weight: 500;
+  color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.25s var(--transition),
+    color 0.25s var(--transition),
+    border-color 0.25s var(--transition);
   min-height: 44px;
   font-family: inherit;
 }
 
 .filter-btn:hover {
-  border-color: #005f6b;
-  color: #005f6b;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .filter-btn.active {
-  background-color: #005f6b;
-  border-color: #005f6b;
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .category-grids-container {
@@ -96,12 +101,16 @@
 .category-grid-view {
   display: none;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s var(--transition),
+    transform 0.35s var(--transition);
 }
 
 .category-grid-view.visible {
   display: block;
   opacity: 1;
+  transform: none;
 }
 
 .catalogo-content .container {
@@ -112,7 +121,7 @@
 .catalogo-content .products-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1rem, 3vw, 2rem);
+  gap: clamp(1rem, 3vw, 1.5rem);
 }
 
 @media (min-width: 480px) {
@@ -123,7 +132,7 @@
 
 @media (min-width: 768px) {
   .filter-btn {
-    padding: 0.75rem 1.75rem;
+    padding: 0.65rem 1.5rem;
   }
 }
 

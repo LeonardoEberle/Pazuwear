@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Contato.css'
 import heroImg from '../assets/contato-hero.png'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const faqItems = [
   {
@@ -52,33 +53,30 @@ const faqItems = [
 
 function Contato() {
   const [openFaq, setOpenFaq] = useState(null)
+  const gridRef = useScrollReveal({ stagger: 0 })
+  const policyRef = useScrollReveal({ stagger: 0.08 })
 
   const toggleFaq = (id) => setOpenFaq(prev => prev === id ? null : id)
 
   return (
     <main className="contato-page">
-      <section className="contato-hero" style={{ backgroundImage: `url(${heroImg})` }}>
-        <div className="contato-hero-content">
-          <h1>Contact Us</h1>
-          <p>Have any questions or just want to say hi? We'd love to hear from you.</p>
-        </div>
-      </section>
+      <section className="contato-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
       <section className="contato-content">
-        <div className="container">
+        <div className="container" ref={gridRef}>
           <div className="contato-grid">
-            <div className="contato-info">
+            <div className="contato-info reveal">
               <h2>Let's Talk</h2>
               <p>We're always checking these channels, so choose the one you feel most comfortable with, and we'll be happy to help you choose the perfect design, size, and take care of your shipping logistics.</p>
 
               <div className="info-item">
                 <h3>WhatsApp</h3>
-                <p><a href="https://wa.me/13053019516" target="_blank" rel="noopener noreferrer" className="whatsapp-link">305 301 9516</a></p>
+                <p><a href="https://wa.me/13053019516" target="_blank" rel="noopener noreferrer">305 301 9516</a></p>
               </div>
 
               <div className="info-item">
                 <h3>Instagram DMs</h3>
-                <p><a href="https://www.instagram.com/pazubeachwear/" target="_blank" rel="noopener noreferrer" className="instagram-link">@pazubeachwear</a></p>
+                <p><a href="https://www.instagram.com/pazubeachwear/" target="_blank" rel="noopener noreferrer">@pazubeachwear</a></p>
               </div>
 
               <div className="info-item">
@@ -87,14 +85,14 @@ function Contato() {
               </div>
             </div>
 
-            <div className="faq-container">
+            <div className="faq-container reveal">
               <h2>Frequently Asked Questions</h2>
 
               {faqItems.map((item) => (
                 <div key={item.id} className={`faq-item ${openFaq === item.id ? 'open' : ''}`}>
                   <button className="faq-question" onClick={() => toggleFaq(item.id)} aria-expanded={openFaq === item.id}>
                     <span>{item.question}</span>
-                    <span className="faq-icon">{openFaq === item.id ? '−' : '+'}</span>
+                    <span className="faq-icon">+</span>
                   </button>
                   <div className="faq-answer">
                     {item.answer}
@@ -104,12 +102,12 @@ function Contato() {
             </div>
           </div>
 
-          <div className="policy-section">
-            <h2>Return Policy</h2>
-            <p className="policy-intro">We want you to be absolutely in love with your new beachwear! But we understand that returns might be necessary sometimes. Here's how we make returns smooth and easy:</p>
+          <div className="policy-section" ref={policyRef}>
+            <h2 className="reveal">Return Policy</h2>
+            <p className="policy-intro reveal">We want you to be absolutely in love with your new beachwear! But we understand that returns might be necessary sometimes. Here's how we make returns smooth and easy:</p>
 
             <div className="policy-grid">
-              <div className="policy-card">
+              <div className="policy-card reveal">
                 <h3>Eligibility</h3>
                 <ul>
                   <li>You can return items within 15 days of your purchase.</li>
@@ -118,12 +116,12 @@ function Contato() {
                 </ul>
               </div>
 
-              <div className="policy-card">
+              <div className="policy-card reveal">
                 <h3>Fabrication Issues</h3>
                 <p>If you find any issues related to the fabrication (like defects in the material or stitching), please contact us immediately. We'll work with you to resolve the issue with either an exchange, refund, or store credit, depending on your preference.</p>
               </div>
 
-              <div className="policy-card">
+              <div className="policy-card reveal">
                 <h3>Return Process</h3>
                 <ol>
                   <li>Reach out to us within 15 days of receiving your order via email at <strong>pazubeachwear@gmail.com</strong>. Let us know your order details and the reason for the return.</li>

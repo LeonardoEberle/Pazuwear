@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { featuredProducts } from '../data/products'
 import heroImg from '../assets/catalogo-hero.png'
 import './Produto.css'
+import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const WHATSAPP_NUMBER = '13053019516'
 
@@ -11,9 +12,9 @@ function Produto() {
   const navigate = useNavigate()
   const product = featuredProducts.find(p => p.id === Number(id))
 
+  const containerRef = useScrollReveal({ stagger: 0 })
   const [activeImg, setActiveImg] = useState(0)
   const [selectedSize, setSelectedSize] = useState(null)
-  // { [piece]: quantity }  — piece only appears here if selected (qty >= 1)
   const [pieceQty, setPieceQty] = useState({})
 
   useEffect(() => {
@@ -86,16 +87,17 @@ function Produto() {
 
   return (
     <main className="produto-page">
-      <section className="produto-hero" style={{ backgroundImage: `url(${heroImg})` }}>
-        <div className="produto-hero-content">
-          <span className="produto-hero-tag">{product.category}</span>
+      <section className="produto-hero" style={{ backgroundImage: `url(${heroImg})` }} />
+
+      <div className="produto-container" ref={containerRef}>
+
+        <div className="produto-back">
+          <button className="back-link" onClick={() => navigate('/catalogo')}>
+            <span aria-hidden="true">&larr;</span> All Products
+          </button>
         </div>
-      </section>
 
-      <div className="produto-container">
-
-        {/* Gallery */}
-        <div className="produto-gallery">
+        <div className="produto-gallery reveal">
           <div className="gallery-thumbnails">
             {product.images.map((img, i) => (
               <button
@@ -120,8 +122,7 @@ function Produto() {
           </div>
         </div>
 
-        {/* Info */}
-        <div className="produto-info">
+        <div className="produto-info reveal">
           <span className="produto-category">{product.category}</span>
           <h1 className="produto-title">{product.collection}</h1>
           {product.label && <span className="produto-badge">{product.label}</span>}
@@ -129,31 +130,65 @@ function Produto() {
 
           {/* Multi-piece selection */}
           {hasPieceSelection && (
-            <div className="produto-selection">
-              <p className="selection-label">Select pieces:</p>
-              <div className="piece-list">
-                {priceEntries.map(([piece, price]) => {
-                  const selected = !!pieceQty[piece]
-                  return (
-                    <div key={piece} className={`piece-row ${selected ? 'selected' : ''}`}>
-                      <button className="piece-toggle" onClick={() => togglePiece(piece)}>
-                        <span className="piece-check">{selected ? '✓' : ''}</span>
-                        <span className="piece-name">{piece}</span>
-                        <span className="piece-price">${price}</span>
-                      </button>
-                      {selected && (
-                        <div className="qty-control">
-                          <button className="qty-btn" onClick={() => changeQty(piece, -1)}>−</button>
-                          <span className="qty-value">{pieceQty[piece]}</span>
-                          <button className="qty-btn" onClick={() => changeQty(piece, +1)}>+</button>
+            <div className="steps-container">
+              <div className="step-block">
+                <div className="step-header">
+                  <span className="selection-step">1</span>
+                  <div>
+                    <p className="step-title">Choose your pieces</p>
+                    <p className="step-subtitle">Mix &amp; match — select Top, Bottom, or both to build your set.</p>
+                  </div>
+                </div>
+                <div className="step-content">
+                  <div className="piece-list">
+                    {priceEntries.map(([piece, price]) => {
+                      const selected = !!pieceQty[piece]
+                      return (
+                        <div key={piece} className={`piece-row ${selected ? 'selected' : ''}`}>
+                          <button className="piece-toggle" onClick={() => togglePiece(piece)}>
+                            <span className="piece-check">{selected ? '✓' : ''}</span>
+                            <span className="piece-name">{piece}</span>
+                            <span className="piece-price">${price}</span>
+                          </button>
+                          {selected && (
+                            <div className="qty-control">
+                              <button className="qty-btn" onClick={() => changeQty(piece, -1)}>−</button>
+                              <span className="qty-value">{pieceQty[piece]}</span>
+                              <button className="qty-btn" onClick={() => changeQty(piece, +1)}>+</button>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                  )
-                })}
+                      )
+                    })}
+                  </div>
+                  {selectedPieces.length > 0 && (
+                    <p className="price-total">Total: <strong>${totalPrice}</strong></p>
+                  )}
+                </div>
               </div>
-              {selectedPieces.length > 0 && (
-                <p className="price-total">Total: <strong>${totalPrice}</strong></p>
+
+              {product.sizes.length > 0 && (
+                <div className="step-block">
+                  <div className="step-header">
+                    <span className="selection-step">2</span>
+                    <div>
+                      <p className="step-title">Select your size {selectedSize && <strong>— {selectedSize}</strong>}</p>
+                    </div>
+                  </div>
+                  <div className="step-content">
+                    <div className="selection-options">
+                      {product.sizes.map(size => (
+                        <button
+                          key={size}
+                          className={`option-btn size-btn ${selectedSize === size ? 'active' : ''}`}
+                          onClick={() => setSelectedSize(size)}
+                        >
+                          {size}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           )}
@@ -174,11 +209,11 @@ function Produto() {
             </div>
           )}
 
-          {/* Size selection */}
-          {product.sizes.length > 0 && (
+          {/* Size selection (non-multi-piece products) */}
+          {!hasPieceSelection && product.sizes.length > 0 && (
             <div className="produto-selection">
               <p className="selection-label">
-                Select size: {selectedSize && <strong>{selectedSize}</strong>}
+                Select size {selectedSize && <strong>— {selectedSize}</strong>}
               </p>
               <div className="selection-options">
                 {product.sizes.map(size => (
