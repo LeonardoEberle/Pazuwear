@@ -1,0 +1,15 @@
+# Copy to terraform.tfvars (do not commit secrets here)
+
+project_name = "pazuwear"
+aws_region     = "eu-west-1"
+
+# Hostnames that appear on your ACM cert (*.jaogabriel.dev covers subdomains only, not apex)
+cloudfront_aliases = ["pazuwear.jaogabriel.dev"]
+
+# Optional override (default is set in variables.tf)
+# acm_certificate_arn = "arn:aws:acm:us-east-1:ACCOUNT:certificate/UUID"
+
+# Bucket name is fixed (default pazuwear); workflow uses s3://pazuwear/
+# s3_bucket_name = "pazuwear"
+
+# After terraform apply, set GitHub secret CLOUDFRONT_DISTRIBUTION_ID from output
