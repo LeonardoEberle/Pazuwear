@@ -2,55 +2,6 @@
   padding-top: 0;
 }
 
-.catalogo-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: clamp(16rem, 42vw, 50vh);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  text-align: center;
-  color: #ffffff;
-  margin-top: var(--header-offset);
-  padding: clamp(3rem, 10vw, 5rem) var(--gutter);
-}
-
-.catalogo-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
-  z-index: 1;
-}
-
-.catalogo-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 0;
-  animation: hero-fade-up 0.8s var(--transition) both;
-}
-
-.catalogo-hero h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin-bottom: 1rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.catalogo-hero p {
-  font-size: clamp(1rem, 2.3vw, 1.15rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
 .catalogo-content {
   padding: clamp(2.5rem, 6vw, 5rem) var(--gutter);
   background-color: var(--bg-main);

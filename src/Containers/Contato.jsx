@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Contato.css'
-import heroImg from '../assets/contato-hero.png'
+import heroImg from '../assets/background-hero-new.png'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const faqItems = [
@@ -60,7 +60,7 @@ function Contato() {
 
   return (
     <main className="contato-page">
-      <section className="contato-hero" style={{ backgroundImage: `url(${heroImg})` }} />
+      <section className="page-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
       <section className="contato-content">
         <div className="container" ref={gridRef}>

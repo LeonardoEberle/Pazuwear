@@ -29,6 +29,32 @@
   }
 }
 
+/* ── Page Hero (shared across all pages) ── */
+
+.page-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(2rem, 6vw, 4rem) var(--gutter);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f4e8;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  margin-top: var(--header-offset);
+  min-height: min(38vh, 20rem);
+}
+
+@media (min-width: 768px) {
+  .page-hero {
+    min-height: min(42vh, 22rem);
+  }
+}
+
 /* ── Site Header ── */
 
 .site-header {
@@ -312,6 +338,18 @@ nav li {
 }
 
 /* ── Footer ── */
+
+/* ── Footer border image ── */
+
+.footer-border-img {
+  width: 100%;
+  height: 80px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+}
 
 .site-footer {
   background-color: var(--bg-secondary);

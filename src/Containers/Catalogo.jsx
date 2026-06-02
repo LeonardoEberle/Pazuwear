@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Catalogo.css'
 import { featuredProducts } from '../data/products'
-import heroImg from '../assets/catalogo-hero.png'
+import heroImg from '../assets/background-hero-new.png'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 function Catalogo() {
@@ -47,7 +47,7 @@ function Catalogo() {
 
   return (
     <main className="catalogo-page">
-      <section className="catalogo-hero" style={{ backgroundImage: `url(${heroImg})` }} />
+      <section className="page-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
       <section className="catalogo-content" ref={gridRef}>
         <div className="container">

@@ -1,5 +1,5 @@
 import './Sobre.css'
-import heroImg from '../assets/sobre-hero.png'
+import heroImg from '../assets/background-hero-new.png'
 import whoImg from '../assets/sobre-1.png'
 import sustImg1 from '../assets/sobre-2.png'
 import sustImg2 from '../assets/sobre-3.png'
@@ -15,7 +15,7 @@ function Sobre() {
 
   return (
     <main className="sobre-page">
-      <section className="sobre-hero" style={{ backgroundImage: `url(${heroImg})` }} />
+      <section className="page-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
       <section className="sobre-section who-we-are" ref={whoRef}>
         <div className="sobre-container">

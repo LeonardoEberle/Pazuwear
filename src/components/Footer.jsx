@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/PazuLogo.png'
+import borderImg from '../assets/background-hero-new.png'
 
 function Footer() {
   return (
@@ -33,6 +34,12 @@ function Footer() {
       <div className="footer-bottom">
         <p>Pazü Wearbeach &copy; {new Date().getFullYear()}</p>
       </div>
+
+      <div
+        className="footer-border-img"
+        style={{ backgroundImage: `url(${borderImg})` }}
+        aria-hidden="true"
+      />
     </footer>
   )
 }

@@ -4,55 +4,6 @@
   padding-top: 0;
 }
 
-.produto-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: clamp(10rem, 28vw, 25vh);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  text-align: center;
-  color: #ffffff;
-  margin-top: var(--header-offset);
-  padding: clamp(2rem, 6vw, 3rem) var(--gutter);
-}
-
-.produto-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
-  z-index: 1;
-}
-
-.produto-hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 0;
-  animation: hero-fade-up 0.8s var(--transition) both;
-}
-
-.produto-hero-tag {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: clamp(0.7rem, 2vw, 0.85rem);
-  letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 600;
-}
-
-.produto-hero h1 {
-  font-size: clamp(1.5rem, 5vw, 3rem);
-  font-weight: 800;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
 .produto-container {
   max-width: 1100px;
   margin: 0 auto;

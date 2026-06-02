@@ -2,55 +2,6 @@
   padding-top: 0;
 }
 
-.sobre-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: clamp(18rem, 52vw, 60vh);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  text-align: center;
-  color: #ffffff;
-  margin-top: var(--header-offset);
-  padding: clamp(3rem, 10vw, 5rem) var(--gutter);
-}
-
-.sobre-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  z-index: 1;
-}
-
-.sobre-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 42rem;
-  margin: 0 auto;
-  padding: 0;
-  animation: hero-fade-up 0.8s var(--transition) both;
-}
-
-.sobre-hero h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin-bottom: 1.25rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.sobre-hero p {
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
 .sobre-section {
   padding: clamp(3rem, 8vw, 6rem) var(--gutter);
   background-color: var(--bg-main);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { featuredProducts } from '../data/products'
-import heroImg from '../assets/catalogo-hero.png'
+import heroImg from '../assets/background-hero-new.png'
 import './Produto.css'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
@@ -87,7 +87,7 @@ function Produto() {
 
   return (
     <main className="produto-page">
-      <section className="produto-hero" style={{ backgroundImage: `url(${heroImg})` }} />
+      <section className="page-hero" style={{ backgroundImage: `url(${heroImg})` }} />
 
       <div className="produto-container" ref={containerRef}>
 

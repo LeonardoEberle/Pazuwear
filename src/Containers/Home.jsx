@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Home.css'
-import heroBannerImg from '../assets/banner-fundo-hero.png'
+import heroBannerImg from '../assets/background-hero-new.png'
 import { featuredProducts } from '../data/products'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
@@ -33,8 +33,8 @@ function Home() {
 
   return (
     <main className="home">
-      <section className="hero" style={{ backgroundImage: `url(${heroBannerImg})` }} />
-
+      <section className="page-hero" style={{ backgroundImage: `url(${heroBannerImg})` }} />
+{/* 
       <section className="home-section" ref={highlightsRef}>
         <div className="section-header reveal">
           <h2>Week Highlights</h2>
@@ -66,7 +66,7 @@ function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="about-brand" ref={aboutRef}>
         <div className="about-header">
@@ -92,7 +92,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+{/* 
       <section className="home-section" ref={productsRef}>
         <div className="section-header reveal">
           <h2>Other products that you might like</h2>
@@ -122,7 +122,7 @@ function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="home-section info-grid" ref={infoRef}>
         <article className="info-card reveal">
